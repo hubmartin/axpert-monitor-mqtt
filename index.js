@@ -46,7 +46,7 @@ client.on('message', (topic, payload) => {
 })
 
 const options = {
-    //port: "/dev/ttyUSB0", // When commented, uses HID, uncomment for UART
+    port: "/dev/serial/by-path/platform-3f980000.usb-usb-0\:1.5\:1.0-port0", // When commented, uses HID, uncomment for UART
 };
 
 const axpert = new AxpertMonitor(options);
@@ -64,4 +64,4 @@ function test() {
     });
 }
 
-var interval = setInterval(test, 4000);
+var interval = setInterval(test, 1000);
