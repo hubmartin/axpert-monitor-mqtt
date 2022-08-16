@@ -53,15 +53,34 @@ const axpert = new AxpertMonitor(options);
 
 //axpert.request("POP02")
 
-function test() {
+function fastReading() {
     axpert.get.generalStatus().then( res => {console.log(res)
-    
-    client.publish("axpert/test", JSON.stringify(res), { qos: 0, retain: false }, (error) => {
-        if (error) {
-          console.error(error)
-        }
-      })
+        client.publish("axpert/generalStatus", JSON.stringify(res), { qos: 0, retain: false }, (error) => {
+            if (error) {
+            console.error(error)
+            }
+        })
     });
 }
 
-var interval = setInterval(test, 1000);
+function slowReading()
+{
+    axpert.get.sendAndParse("QET").then( res => {console.log(res)
+        client.publish("axpert/totalEnergyProduced", JSON.stringify(res), { qos: 0, retain: false }, (error) => {
+            if (error) {
+                console.error(error)
+            }
+        })
+    });
+    
+    axpert.get.mode().then( res => {console.log(res)
+        client.publish("axpert/mode", JSON.stringify(res), { qos: 0, retain: false }, (error) => {
+            if (error) {
+                console.error(error)
+            }
+        })
+    });
+}
+
+var interval = setInterval(fastReading, 1000);
+var interval = setInterval(slowReading, 10000);
