@@ -27,3 +27,9 @@ npm install
 ```
 On older RPI I had to run this before npm install: `sudo apt install libusb-dev libudev-dev`.
 
+In node.red install 
+node-red-dashboard
+node-red-contrib-persist
+
+Import node-red-flow.json file in Node-red
+
