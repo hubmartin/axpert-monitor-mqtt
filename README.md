@@ -13,6 +13,14 @@ Commands are checked with `startsWith` to work as a firewall.
 ## Install steps
 
 ```
+# Nodered
+bash <(curl -sL https://raw.githubusercontent.com/node-red/linux-installers/master/deb/update-nodejs-and-nodered)
+sudo systemctl enable nodered.service
+
+# MQTT broker
+sudo apt install -y mosquitto mosquitto-clients
+sudo systemctl enable mosquitto.service
+
 git clone https://github.com/hubmartin/axpert-monitor-mqtt.git
 cd axpert-monitor-mqtt
 npm install
