@@ -26,6 +26,7 @@ cd axpert-monitor-mqtt
 npm install
 
 sudo npm install pm2 -g
+pm2 install pm2-logrotate
 pm2 start index.js --name axpert-monitor-mqtt
 ```
 On older RPI I had to run this before npm install: `sudo apt install libusb-dev libudev-dev`.
