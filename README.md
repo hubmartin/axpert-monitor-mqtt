@@ -21,6 +21,7 @@ sudo systemctl enable nodered.service
 sudo apt install -y mosquitto mosquitto-clients
 sudo systemctl enable mosquitto.service
 
+sudo apt install -y git
 git clone https://github.com/hubmartin/axpert-monitor-mqtt.git
 cd axpert-monitor-mqtt
 npm install
