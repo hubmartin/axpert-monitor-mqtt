@@ -39,6 +39,7 @@ sudo env PATH=$PATH:/usr/bin /usr/lib/node_modules/pm2/bin/pm2 startup systemd -
 pm2 save
 
 curl -fsSL https://tailscale.com/install.sh | sh
+sudo tailscale up
 ```
 On older RPI I had to run this before npm install: `sudo apt install libusb-dev libudev-dev`.
 
