@@ -37,6 +37,8 @@ pm2 start index.js --name axpert-monitor-mqtt
 #pm2 startup
 sudo env PATH=$PATH:/usr/bin /usr/lib/node_modules/pm2/bin/pm2 startup systemd -u pi --hp /home/pi
 pm2 save
+
+curl -fsSL https://tailscale.com/install.sh | sh
 ```
 On older RPI I had to run this before npm install: `sudo apt install libusb-dev libudev-dev`.
 
