@@ -34,13 +34,11 @@ npm install
 sudo npm install pm2 -g
 pm2 install pm2-logrotate
 pm2 start index.js --name axpert-monitor-mqtt
+#pm2 startup
+sudo env PATH=$PATH:/usr/bin /usr/lib/node_modules/pm2/bin/pm2 startup systemd -u pi --hp /home/pi
 pm2 save
 ```
 On older RPI I had to run this before npm install: `sudo apt install libusb-dev libudev-dev`.
-
-In node.red install 
-`node-red-dashboard`
-`node-red-contrib-persist`
 
 Import node-red-flow.json file in Node-red
 
