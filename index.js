@@ -2,7 +2,7 @@
 const mqtt = require('mqtt')
 const AxpertMonitor = require("axpert-monitor");
 
-const host = '192.168.1.112'
+const host = 'localhost'
 const port = '1883'
 const clientId = `mqtt_${Math.random().toString(16).slice(3)}`
 
@@ -47,6 +47,7 @@ client.on('message', (topic, payload) => {
 
 const options = {
     port: "/dev/serial/by-path/platform-3f980000.usb-usb-0\:1.5\:1.0-port0", // When commented, uses HID, uncomment for UART
+    // port: "/dev/serial/by-path/platform-fd500000.pcie-pci-0000:01:00.0-usb-0:1.4:1.0-port0"  // RPI4, lower left port
 };
 
 const axpert = new AxpertMonitor(options);
