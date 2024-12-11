@@ -30,6 +30,7 @@ sudo apt install -y git
 git clone https://github.com/hubmartin/axpert-monitor-mqtt.git
 cd axpert-monitor-mqtt
 sudo apt install libusb-1.0-0-dev
+# if node is too new, try nvm install 18.15.0
 npm install
 
 sudo npm install pm2 -g
